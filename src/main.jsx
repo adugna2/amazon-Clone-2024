@@ -1,12 +1,12 @@
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css';
- import { ProductProvider } from './ProductContext';
-
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { ProductProvider } from './APi/ProductContext'; // Ensure correct path
+import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <ProductProvider> 
+  <React.StrictMode>
+    <ProductProvider>
       <App />
-    </ProductProvider> 
-  </>,
-)
+    </ProductProvider>
+  </React.StrictMode>
+);

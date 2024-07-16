@@ -1,20 +1,36 @@
 
-import Routing from './Router'; 
-// import { ThemeProvider } from './ContentProvider'; 
-// import ComponentA from './ComponentA';
-// import ComponentB from './ComponentB';
-// import { BasketProvider } from './BasketProvider';
+// import ReactDOM from 'react-dom';  
+// import './index.css';  
+// import Routing from './Router';  
+//  import { ProductProvider } from './ProductContext';  
+// function App (){
+//   return (
+    
+//         <div className="App">
+          
+//           <Routing />
+//         </div>
+
+//   );
+// }
+
+// export default App;
+// App.jsx
+ import ReactDOM from 'react-dom';
+import './index.css';
+import Routing from './Router';
+import { ProductProvider } from '../src/APi/ProductContext';
+import { CartProvider } from './CartContext';
+
 function App() {
   return (
-    // <ThemeProvider>
-    //   <BasketProvider>
+    <CartProvider>
+      <ProductProvider>
         <div className="App">
-          {/* <ComponentA />
-          <ComponentB /> */}
           <Routing />
         </div>
-    //   </BasketProvider>
-    // </ThemeProvider>
+      </ProductProvider>
+    </CartProvider>
   );
 }
 

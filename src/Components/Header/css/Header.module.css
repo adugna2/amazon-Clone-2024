@@ -123,3 +123,9 @@ list-style-type: none;
 
 .language{display: none
 }
+.stickyHeader{
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+}

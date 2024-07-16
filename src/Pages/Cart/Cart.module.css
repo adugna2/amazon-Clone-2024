@@ -1,0 +1,16 @@
+/* Cart.module.css */
+
+.cartPage {
+  padding: 20px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cartItem img {
+  width: 100px;
+  margin-right: 20px;
+}
