@@ -1,9 +1,13 @@
-import Layout from '../../Components/layout/Layout'
-import classes from './Payment.module.css'
+// import React from 'react'
+
+import LayOut from "../../componentes/LayOut/LayOut";
+
 function Payment() {
   return (
-    <Layout><div>Payment</div></Layout>
-  )
+    <LayOut>
+      <div>Payment</div>
+    </LayOut>
+  );
 }
 
 export default Payment

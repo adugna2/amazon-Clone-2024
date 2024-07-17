@@ -1,17 +1,18 @@
+import LayOut from "../../componentes/LayOut/LayOut.jsx";
+import CarouselEffect from "../../componentes/carousel/Carousel";
+import Catagory from "../../componentes/catagory/Catagory";
+import Product from "../../componentes/product/Product";
 
-import CarouselEffect from '../../Components/Carousel/CarouselEffect';
- import Category from '../../Components/Category/Category';
- import Layout from '../../Components/layout/Layout';
- import Product from '../../Components/Product/Product';
-// import ProductDetail from '../ProductDetail/ProductDetail';
 function Landing() {
   return (
-    <Layout>  
-      <CarouselEffect />
-      <Category /> 
-      <Product/>
-      </Layout>
-  )
+    <>
+     <LayOut>
+       <CarouselEffect />
+      <Catagory />
+      <Product />
+   </LayOut> 
+  </>
+  );
 }
 
-export default Landing
+export default Landing;

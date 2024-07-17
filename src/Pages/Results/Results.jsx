@@ -1,102 +1,56 @@
+// import classes from "./Results.module.css"
+import LayOut from "../../componentes/LayOut/LayOut";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { productUrl } from "../../Api/endPoints";
+import { useEffect,useState} from 'react'
+import classes from "./Result.module.css"
+import ProductCard from "../../componentes/product/ProductCard";
+import Loader from "../../componentes/Loader/Loader";
 
-import { useEffect, useState } from 'react';
-import classes from './Result.module.css';
-import Layout from '../../Components/layout/Layout';
-import { useParams } from 'react-router-dom';
-import axios from '../../Pages/Results/axios'; // Ensure the correct path to your custom axios instance
-import ProductCard from '../../Components/Product/ProductCard';
 
 function Results() {
-  const [Results, SetResults] = useState([]);
-  const [error, setError] = useState(null);
-  const { categoryName } = useParams();
+  const [results, setResults] = useState([]);
+  const { catagoryName } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
 
+  // console.log(catagoryName);
   useEffect(() => {
-    // URL-encode the category name
-    const encodedCategoryName = encodeURIComponent(categoryName);
-    const url = `/products/category/${encodedCategoryName}`;
-    console.log('Fetching products from:', url);
+    setIsLoading(true);
 
-    axios.get(url)
+    axios .get(`${productUrl}/products/category/${catagoryName}`)
       .then((res) => {
-        SetResults(res.data);
+        setResults(res.data);
+        setIsLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
-        console.log('Error fetching data:', err);
+        setIsLoading(false);
+        console.log(err);
       });
-  }, [categoryName]);
+  }, []);
 
   return (
-    <Layout>
-      <section>
-        <h1 style={{ padding: '30px' }}>Results</h1>
-        <p style={{ padding: '30px' }}>Category/{categoryName}</p>
-        <hr />
-        {error && <p style={{ color: 'red', padding: '30px' }}>Error: {error}</p>}
-        <div className={classes.Products__container}>
-          {Results?.map((Product) => (
-            <ProductCard
-              key={Product.id}
-              Product={Product}
-            />
-          ))}
-        </div>
-      </section>
-    </Layout>
+    <LayOut>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <section>
+          <h1 style={{ padding: "30px" }}>Results</h1>
+          <p style={{ padding: "30px" }}>Catagory/{catagoryName}</p>
+          <hr />
+          <div className={classes.products__container}>
+            {results?.map((Product) => (
+              <ProductCard
+                product={Product}
+                key={Product.id}
+                renderAdd={true}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+    </LayOut>
   );
 }
 
 export default Results;
-
-
-
-
-
-
-
-
-
-
-
-// import classes from './Result.module.css'
-// import Layout from '../../Components/layout/Layout'
-// import { useParams } from 'react-router-dom'
-// import axios from '../../Pages/Results/axios';
-// import { ProductUrl} from '../../APi/endPonint'
-// import { useEffect, useState } from 'react'
-// import ProductCard from '../../Components/Product/ProductCard'
-
-// function Results() {
-//   const [Results, SetResults] = useState([]);
-//   const { categoryName } = useParams();
-
-//   useEffect(() => {
-//     axios.get(`${ProductUrl}/Product/Category/${categoryName}`)
-
-//       .then((res) => {
-//         SetResults(res.data);
-//       }).catch((err) => {
-//         console.log(err);
-//       });
-//   }, [categoryName]);
-
-//   return (
-//     <Layout>
-//       <section>
-//     <h1 style={{ padding: '30px' }}>Results</h1>
-//       <p style={{ padding: '30px' }}>Category/{categoryName}</p>
-//       <hr />       <div className={classes.Products__container}>
-//         {Results?.map((Product) => (
-//           <ProductCard
-//               key={Product.id} 
-//         Product={Product}
-//        /> 
-//         ))}
-//       </div> 
-//      </section> 
-// </Layout>
-// );
-// }
-
-// export default Results;

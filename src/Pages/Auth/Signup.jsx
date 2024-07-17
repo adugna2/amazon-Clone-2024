@@ -1,10 +1,12 @@
+import LayOut from "../../componentes/LayOut/LayOut";
 
-// import classes from './Signup.module.css'
-import Layout from '../../Components/layout/Layout'
-function Signup() {
+//  import classes from "./SinUp.module.css"
+function SignUp() {
   return (
-   <Layout><div>Signup</div></Layout> 
+  <LayOut>
+    <div>login</div>
+  </LayOut>
   )
 }
 
-export default Signup
+export default SignUp;
