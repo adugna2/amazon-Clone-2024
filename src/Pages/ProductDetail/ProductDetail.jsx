@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from "react-router-dom";
-import LayOut from "../../componentes/LayOut/LayOut";
+import LayOut from "../../Components/LayOut/LayOut";
 import { useEffect,useState} from'react'
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
-import ProductCard from "../../componentes/product/ProductCard";
-import Loader from "../../componentes/Loader/Loader";
+import ProductCard from "../../Components/product/ProductCard";
+import Loader from "../../Components/Loader/Loader";
 
 // import classes from './ProductDetail.module.css'
 function ProductDetail() {

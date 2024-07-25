@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-key */
 import classes from "./Cart.module.css";
 import { useContext } from "react";
-import LayOut from "../../componentes/LayOut/LayOut";
-import { DataContext } from "../../componentes/DataProvider/DataProvider";
-import ProductCard from "../../componentes/product/ProductCard";
-import CurrencyFormater from "../../componentes/currencyFormat/CurrencyFormat";
+import LayOut from "../../Components/LayOut/LayOut";
+import { DataContext } from "../../Components/DataProvider/DataProvider";
+import ProductCard from "../../Components/product/ProductCard";
+import CurrencyFormater from "../../Components/currencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import { Type } from "../../Utility/action.type";
 import { IoIosArrowDown } from "react-icons/io";

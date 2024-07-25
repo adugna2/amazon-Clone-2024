@@ -1,0 +1,68 @@
+.Payment_header{
+    text-align: center;
+    background-color: rgb(234,237,237);
+    font-size: 24px;
+    padding: 20px;
+}
+.Payment div h3{
+   display:flex table-row;
+}
+.CardError{
+    color: red;
+}
+.Payment{padding: 30;}
+
+.flex{
+    display: 
+    flex;
+    gap: 20px;
+    padding: 30;
+}
+.flex{
+    min-width: 300px;
+}
+.flex img{
+width: 80px !important;
+}
+.flex div{
+    height: auto !important;
+}
+.Payment_Card_container{
+    max-width: 350px;
+    width: 100%;
+}
+/* .Payment_details{
+    font-size: 20px;
+} */
+ .Payment_price{
+    padding: 20px;
+ }
+ .Payment_price div{
+display: flex;
+font-size: 16px;
+gap: 10px;
+ }
+ .Payment_details button{
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    background-color: var( --primary-color);
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+ }
+ .Payment_details button :hover{
+    background-color: var( --primary-shade);
+ }
+.loading{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    color: rgb(52,52,52);
+}
+ @media screen  and ( max-width: 768px){
+    .flex{
+      flex-direction: column;  
+    }
+ }

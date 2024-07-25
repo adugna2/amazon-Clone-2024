@@ -1,8 +1,7 @@
-import LayOut from "../../componentes/LayOut/LayOut.jsx";
-import CarouselEffect from "../../componentes/carousel/Carousel";
-import Catagory from "../../componentes/catagory/Catagory";
-import Product from "../../componentes/product/Product";
-
+import LayOut from "../../Components/LayOut/LayOut.jsx";
+import CarouselEffect from "../../Components/carousel/Carousel";
+import Catagory from "../../Components/catagory/Catagory";
+import Product from "../../Components/product/Product";
 function Landing() {
   return (
     <>

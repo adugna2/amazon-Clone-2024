@@ -14,15 +14,9 @@ function CarouselEffect() {
         showStatus={false}
         showThumbs={false}
         
-        // showThumbs={false}
-        // centerMode
-        // dynamicHeight={false}
-        // emulateTouch 
-        // swipeScrollTolerance={90}
-        // centerSlidePercentage={100}
       >
-        {img.map((imageItemLink, i) => {
-          return <img src={imageItemLink} key={i} />;
+        {img?.map((imageItemLink) => {
+          return <img key={imageItemLink} src={imageItemLink} />;
         })}
       </Carousel>
       <div className={classes.hero__img}></div>

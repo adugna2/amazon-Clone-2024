@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import Header from "../Header/Header";
 import LowerHeader from "../Header/LowerHeader";
 
